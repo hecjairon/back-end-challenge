@@ -26,14 +26,6 @@ use App\Controller\ExchangeController;
 require __DIR__ . '/../vendor/autoload.php';
 
 $routes = new RouteCollection();
-/*$routes->add(
-    'default', 
-    new Route(
-        '/', 
-        [ '_controller' => [
-            ExchangeController::class, 'exchange'] ]
-    )
-); */
 
 $routes->add(
     'exchange', 
@@ -70,10 +62,10 @@ try {
             );
             $response->send();
         } else {
-            throw new Exception('Método no definido.');
+            throw new Exception('Método não definido.');
         }
     } else {
-        throw new Exception('Controlador no definido.');
+        throw new Exception('Controller não definida.');
     }
 } catch (Exception $e) {
     $data = [
